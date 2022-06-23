@@ -79,8 +79,8 @@ df_with_schema.printSchema()
 # write as csv options
 #
 
-df_with_schema.write.option("header", True).csv("output/zipcodes.csv")
-df_with_schema.write.options(header='True', delimiter=',').csv("output/zipcodes.csv")
+df_with_schema.write.mode(saveMode='overwrite').option("header", True).csv("output/zipcodes.csv")
+df_with_schema.write.mode(saveMode='overwrite').options(header='True', delimiter=',').csv("output/zipcodes.csv")
 
 # save modes
 # overwrite
