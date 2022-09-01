@@ -31,7 +31,7 @@ Another approach is to do two-phase aggregation.
 PySpark 2.0 uses this implementation 
 in order to improve the performance Spark-13749
 '''
-pivotDF = df.groupBy("Product","Country") \
+pivotDF = df.groupBy("Product", "Country") \
       .sum("Amount") \
       .groupBy("Product") \
       .pivot("Country") \
