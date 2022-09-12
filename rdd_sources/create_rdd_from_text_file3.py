@@ -13,8 +13,8 @@ parts = lines.map(lambda l: l.split(","))
 # Each line is converted to a tuple.
 categories = parts.map(lambda p: (p[0], p[1].strip()))
 
-fields = [StructField("Category",StringType()) ,
-          StructField("SubCategory",StringType()) ]
+fields = [StructField("Category", StringType()),
+          StructField("SubCategory", StringType())]
 schema = StructType(fields)
 
 # Apply the schema to the RDD.

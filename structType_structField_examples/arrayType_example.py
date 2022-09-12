@@ -2,7 +2,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType, ArrayType, MapType
 
 spark = SparkSession.builder.master("local[1]") \
-    .appName('SparkByExamples.com') \
+    .appName('arrayType_example') \
     .getOrCreate()
 
 # defining an array column
@@ -19,8 +19,8 @@ arrayStructureSchema = StructType([
        StructField('middlename', StringType(), True),
        StructField('lastname', StringType(), True)
        ])),
-       StructField('hobbies', ArrayType(StringType()), True),
-       StructField('properties', MapType(StringType(),StringType()), True)
+    StructField('hobbies', ArrayType(StringType()), True),
+    StructField('properties', MapType(StringType(),StringType()), True)
     ])
 
 print(arrayStructureSchema.json())

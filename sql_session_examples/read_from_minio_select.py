@@ -5,7 +5,7 @@ import boto3
 
 spark = SparkSession.builder.config("spark.jars", "../lib/minio-select/spark-select_2.11-2.1.jar").getOrCreate()
 
-s3 = boto3.client('s3', endpoint_url = 'http://localhost:9000', aws_access_key_id = 'minioadmin', aws_secret_access_key='minioadmin' )
+s3 = boto3.client('s3', endpoint_url='http://localhost:9000', aws_access_key_id='minioadmin', aws_secret_access_key='minioadmin' )
 
 ss = StructType([ \
     StructField("sid", StringType(), True), \

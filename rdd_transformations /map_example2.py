@@ -2,15 +2,15 @@ from pyspark.sql import SparkSession
 
 spark = SparkSession.builder.master("local[1]").appName("SparkByExamples.com").getOrCreate()
 
-data = ["Project","Gutenberg’s","Alice’s","Adventures",
-        "in","Wonderland","Project","Gutenberg’s","Adventures",
-        "in","Wonderland","Project","Gutenberg’s" ]
+data = ["Project", "Gutenberg’s", "Alice’s", "Adventures",
+        "in", "Wonderland", "Project", "Gutenberg’s", "Adventures",
+        "in", "Wonderland", "Project", "Gutenberg’s"]
 
 rdd = spark.sparkContext.parallelize(data)
 
 # map example with rdd
 
-rdd2=rdd.map(lambda x: (x, 1))
+rdd2 = rdd.map(lambda x: (x, 1))
 
 for element in rdd2.collect():
     print(element)
@@ -50,7 +50,7 @@ def func1(x):
     name = firstName+","+lastName
     gender = x.gender.lower()
     salary = x.salary*2
-    return (name, gender, salary)
+    return name, gender, salary
 
 
 rdd2 = df.rdd.map(lambda x: func1(x)).toDF().show()
