@@ -1,10 +1,10 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.types import StringType, StructType, StructField
 
-spark = SparkSession.builder.appName('create_rdd_from_text_file2').getOrCreate()
+spark = SparkSession.builder.appName('create_rdd_from_text_file3').getOrCreate()
 sc = spark.sparkContext
 
-lines = sc.textFile('data/category.csv')
+lines = sc.textFile('../data/category.csv')
 
 # Load a text file and convert each line to a Row.
 # lines = sc.textFile("examples/src/main/resources/people.txt")

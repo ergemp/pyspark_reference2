@@ -1,10 +1,7 @@
 from pyspark.sql import SparkSession
 
-spark = SparkSession.builder.appName("max_example").getOrCreate()
+spark = SparkSession.builder.appName("count_example").getOrCreate()
 
 rdd = spark.sparkContext.textFile("../data/clickStream.json")
 
-print(rdd.max())
-
-
-
+print(rdd.count())

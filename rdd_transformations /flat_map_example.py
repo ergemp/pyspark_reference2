@@ -10,3 +10,9 @@ lines = sc.textFile('../data/category.csv')
 parts = lines.flatMap(lambda l: l.split(","))
 
 parts.foreach(lambda e: print(e))
+
+'''
+flatMap() transformation flattens the RDD after applying the function and returns a new RDD. 
+On the below example, first, it splits each record by space in an RDD and finally flattens it. 
+Resulting RDD consists of a single word on each record.
+'''

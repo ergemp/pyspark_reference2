@@ -16,3 +16,8 @@ lines \
     .foreach(lambda each: print(each))
 
 
+'''
+reduceByKey() merges the values for each key with the function specified. 
+In our example, it reduces the word string by applying the sum function on value. 
+The result of our RDD contains unique words and their count. 
+'''
