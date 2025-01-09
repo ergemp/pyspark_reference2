@@ -31,6 +31,7 @@ df = spark.createDataFrame(data=simpleData, schema=columns)
 df.printSchema()
 df.show(truncate=False)
 
+
 # we can use any existing aggregate functions as a window function.
 
 # To perform an operation on a group first, we need to partition the data using Window.partitionBy(),
